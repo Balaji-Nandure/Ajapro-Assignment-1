@@ -1,0 +1,19 @@
+/** @format */
+* {
+    font-family: "Kanit", sans-serif;
+}
+
+.logo {
+    font-family: "Pacifico", cursive;
+    font-size: 24px;
+    color: red;
+}
+
+.nav-form {
+    position: relative;
+}
+
+.btn-login {
+    position: absolute;
+    right: 10px;
+}
