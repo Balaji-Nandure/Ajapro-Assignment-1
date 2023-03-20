@@ -1,19 +1,40 @@
 /** @format */
 * {
     font-family: "Kanit", sans-serif;
+    box-sizing: border-box;
 }
 
+/* --------------------------------- Navbar --------------------------------- */
+nav {
+    margin-top: 0px;
+}
+.nav-container {
+    position: relative;
+}
 .logo {
     font-family: "Pacifico", cursive;
     font-size: 24px;
     color: red;
 }
 
-.nav-form {
-    position: relative;
-}
-
 .btn-login {
     position: absolute;
     right: 10px;
+}
+
+/* -------------------------------- Main Body ------------------------------- */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* .card-img,
+.card-img-top {
+    width: 100%;
+} */
+
+.card {
+    display: inline-block;
+    margin-bottom: 20px;
 }
