@@ -1,7 +1,12 @@
 /** @format */
+/* google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
 * {
-    font-family: "Kanit", sans-serif;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
 }
 
 /* --------------------------------- Navbar --------------------------------- */
@@ -11,10 +16,17 @@ nav {
 .nav-container {
     position: relative;
 }
+
 .logo {
-    font-family: "Pacifico", cursive;
+    font-family: "Fredoka One", cursive;
     font-size: 24px;
-    color: red;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 0.2px;
+}
+
+a {
+    text-decoration: none;
 }
 
 .btn-login {
