@@ -34,7 +34,7 @@ const htmlToRoot = `<div class="row">
         min="1"
         max="5" />
 
-    <a href="#" class="btn btn-primary">Add to Cart</a>
+    <a href="#" id="add-to-cart" class="btn btn-primary">Add to Cart</a>
 
     <h5 class="mt-3">
         <b class="d-block">Product Description :-</b>
@@ -45,5 +45,6 @@ const htmlToRoot = `<div class="row">
     </h5>
 </div>
 </div>`;
-
 productDetailRoot.innerHTML = htmlToRoot;
+
+const addToCart = document.getElementById("add-to-cart");

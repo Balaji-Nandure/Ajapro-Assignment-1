@@ -27,8 +27,15 @@ const products = [
     },
 ];
 
+const cart = [];
+
 // Element Selector
 const cardsInIndex = document.querySelectorAll(".cardInIndex");
+const cartBtn = document.getElementById("cart-btn");
+cartBtn.addEventListener("click", () => {
+    window.location.href = "./cart.html";
+});
+console.log(cartBtn);
 
 cardsInIndex.forEach((cardInIndex) => {
     cardInIndex.addEventListener("click", () => {
