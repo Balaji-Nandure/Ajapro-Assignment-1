@@ -49,38 +49,53 @@ productDetailRoot.innerHTML = htmlToRoot;
 
 /* --------------------------- Cart Functionality --------------------------- */
 const quantity = document.getElementById("quantity");
-
 const addToCart = document.getElementById("add-to-cart");
+
+const bootstrapalert = function (classname, msg) {
+    // It means product is already in the cart
+    const alert = document.createElement("div");
+    alert.classList.add(
+        "alert",
+        `alert-${classname}`,
+        "alert-dismissible",
+        "fade",
+        "show",
+        "animate__animated",
+        "animate__ease-in-out"
+    );
+
+    alert.innerHTML = `
+    <div class="container">${msg}</div>
+    `;
+
+    document.body.insertBefore(alert, document.body.firstChild);
+
+    // for hiding the alert after some time
+    setTimeout(() => {
+        alert.classList.remove("show");
+        document.body.removeChild(alert);
+    }, 1000);
+};
+
 addToCart.addEventListener("click", () => {
     const cartItem = {
-        id: product.productId,
+        ...product,
         quantity: quantity.value,
     };
-    cart.push(cartItem);
-    localStorage.setItem("cart", JSON.stringify(cart));
 
-    if (localStorage.getItem("cart")) {
-        totalCartItems.innerText = JSON.parse(
-            localStorage.getItem("cart")
-        ).length;
+    const existingIndex = cart.findIndex(
+        (item) => item.productId === cartItem.productId
+    );
+
+    if (existingIndex !== -1) {
+        bootstrapalert("warning", "Product is already in the cart");
+    } else {
+        // adding product to the localstorage cart
+        cart.push(cartItem);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        bootstrapalert("success", "Product Successfully added to the cart");
+
+        // for updating the cart button red badge numver
+        totalCartItems.innerText = cart.length;
     }
-
-    // if (cart.length === 0) {
-    //     const cartItem = {
-    //         id: product.productId,
-    //         quantity: quantity.value,
-    //     };
-    //     cart.push(cartItem);
-    //     localStorage.setItem("cart", JSON.stringify(cart));
-    //     console.log(quantity.value);
-    // } else {
-    //     cart.forEach((id) => {
-    //         if (id === product.productId) {
-    //             return;
-    //         } else {
-    //             cart.push(product.productId);
-    //             return localStorage.setItem("cart", JSON.stringify(cart));
-    //         }
-    //     });
-    // }
 });
