@@ -1,3 +1,5 @@
-20th March :- Research on the project, revision on bootstrap, Created basic file structure and added responsive navbar
+20th March :- Research on the project, revision on bootstrap, Created basic file structure and added responsive navbar.
 
-20th March :- I was getting some errors in making cards and image responsive, today i solved that problem. and now working on body part
+20th March :- I was getting some errors in making cards and image responsive, today i solved that problem. and now working on body part.
+
+21st march :- created product detail page.
