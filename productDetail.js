@@ -48,16 +48,7 @@ const htmlToRoot = `<div class="row">
 productDetailRoot.innerHTML = htmlToRoot;
 
 /* --------------------------- Cart Functionality --------------------------- */
-let cart;
-const locallyStoredCart = localStorage.getItem("cart");
 const quantity = document.getElementById("quantity");
-
-if (locallyStoredCart) {
-    cart = JSON.parse(locallyStoredCart);
-    console.log(cart);
-} else {
-    cart = [];
-}
 
 const addToCart = document.getElementById("add-to-cart");
 addToCart.addEventListener("click", () => {

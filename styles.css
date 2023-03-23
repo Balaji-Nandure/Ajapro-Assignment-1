@@ -93,14 +93,14 @@ a {
 /* -------------------------------- Cart Page ------------------------------- */
 
 .bi-x-circle {
-    font-size: 120%;
-    transition: all 0.3s ease-in-out;
+    font-size: 150%;
+    transition: all 0.1s ease-in-out;
 }
 
 .bi-x-circle:hover {
     color: red;
     cursor: pointer;
-    font-size: 140%;
+    font-size: 180%;
     font-weight: bold;
 }
 

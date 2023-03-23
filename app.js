@@ -35,6 +35,15 @@ if (localStorage.getItem("cart")) {
     totalCartItems.innerText = JSON.parse(localStorage.getItem("cart")).length;
 }
 
+let cart;
+const locallyStoredCart = localStorage.getItem("cart");
+if (locallyStoredCart) {
+    cart = JSON.parse(locallyStoredCart);
+    console.log(cart);
+} else {
+    cart = [];
+}
+
 cartBtn.addEventListener("click", () => {
     window.location.href = "./cart.html";
 });
