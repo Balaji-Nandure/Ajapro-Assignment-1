@@ -38,7 +38,7 @@
                 <a
                     class="logo"
                     class="text-danger-emphasis navbar-brand"
-                    href="#"
+                    href="http://127.0.0.1:5500/index.html"
                     >Clothingo</a
                 >
                 <div
@@ -196,18 +196,19 @@
 
         <!-- Product Details page -->
 
-        <div class="container mt-4">
+        <div id="productDetailRoot" class="container mt-4">
             <div class="row">
                 <!-- Shirt image -->
                 <div class="col-6 col-md-5 img-div">
                     <img
+                        id="image-src"
                         src="https://rukminim1.flixcart.com/image/612/612/l27wtjk0/shirt/j/u/b/m-wnsh0015-wrogn-original-imagdmfjaeauzuzg.jpeg?q=70"
                         alt="Shirt image" />
                 </div>
                 <!-- Shirt description -->
                 <div class="pt-4 col-6 col-md-7 shirt-detail-text">
-                    <h3>Shirt 1</h3>
-                    <h2>Price : ₹1281</h2>
+                    <h3 id="productName">Shirt 1</h3>
+                    <h2 id="productPrice">Price : ₹1281</h2>
                     <select
                         class="form-select"
                         aria-label="Default select example">
@@ -261,5 +262,6 @@
 
         <!-- Local Script -->
         <script src="./app.js"></script>
+        <script src="./productDetail.js"></script>
     </body>
 </html>

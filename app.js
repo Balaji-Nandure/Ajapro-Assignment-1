@@ -26,3 +26,20 @@ const products = [
         price: 814,
     },
 ];
+
+// Element Selector
+const cardsInIndex = document.querySelectorAll(".cardInIndex");
+
+cardsInIndex.forEach((cardInIndex) => {
+    cardInIndex.addEventListener("click", () => {
+        const clickedCardId = cardInIndex.id;
+        const productWithClikedcardId = products.map((product) => {
+            if (product.productId == clickedCardId) {
+                console.log(product);
+                localStorage.setItem("product", JSON.stringify(product));
+                window.location.href =
+                    "http://127.0.0.1:5500/productDetail.html";
+            }
+        });
+    });
+});
