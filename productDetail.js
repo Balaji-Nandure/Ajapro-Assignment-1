@@ -28,7 +28,7 @@ const htmlToRoot = `<div class="row">
         <option value="xxl">Extra Extra Large (Xl)</option>
     </select>
     <input
-        type="number"
+        type="number" id="quantity"
         class="quantity form-control"
         value="1"
         min="1"
@@ -47,4 +47,49 @@ const htmlToRoot = `<div class="row">
 </div>`;
 productDetailRoot.innerHTML = htmlToRoot;
 
+/* --------------------------- Cart Functionality --------------------------- */
+let cart;
+const locallyStoredCart = localStorage.getItem("cart");
+const quantity = document.getElementById("quantity");
+
+if (locallyStoredCart) {
+    cart = JSON.parse(locallyStoredCart);
+    console.log(cart);
+} else {
+    cart = [];
+}
+
 const addToCart = document.getElementById("add-to-cart");
+addToCart.addEventListener("click", () => {
+    const cartItem = {
+        id: product.productId,
+        quantity: quantity.value,
+    };
+    cart.push(cartItem);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    if (localStorage.getItem("cart")) {
+        totalCartItems.innerText = JSON.parse(
+            localStorage.getItem("cart")
+        ).length;
+    }
+
+    // if (cart.length === 0) {
+    //     const cartItem = {
+    //         id: product.productId,
+    //         quantity: quantity.value,
+    //     };
+    //     cart.push(cartItem);
+    //     localStorage.setItem("cart", JSON.stringify(cart));
+    //     console.log(quantity.value);
+    // } else {
+    //     cart.forEach((id) => {
+    //         if (id === product.productId) {
+    //             return;
+    //         } else {
+    //             cart.push(product.productId);
+    //             return localStorage.setItem("cart", JSON.stringify(cart));
+    //         }
+    //     });
+    // }
+});

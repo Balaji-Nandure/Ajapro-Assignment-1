@@ -27,25 +27,27 @@ const products = [
     },
 ];
 
-const cart = [];
-
 // Element Selector
 const cardsInIndex = document.querySelectorAll(".cardInIndex");
 const cartBtn = document.getElementById("cart-btn");
+const totalCartItems = document.getElementById("total-cart-items");
+if (localStorage.getItem("cart")) {
+    totalCartItems.innerText = JSON.parse(localStorage.getItem("cart")).length;
+}
+
 cartBtn.addEventListener("click", () => {
     window.location.href = "./cart.html";
 });
-console.log(cartBtn);
+// console.log(cartBtn);
 
 cardsInIndex.forEach((cardInIndex) => {
     cardInIndex.addEventListener("click", () => {
         const clickedCardId = cardInIndex.id;
-        const productWithClikedcardId = products.map((product) => {
+        products.map((product) => {
             if (product.productId == clickedCardId) {
                 console.log(product);
                 localStorage.setItem("product", JSON.stringify(product));
-                window.location.href =
-                    "http://127.0.0.1:5500/productDetail.html";
+                window.location.href = "./productDetail.html";
             }
         });
     });
