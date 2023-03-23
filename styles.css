@@ -33,6 +33,11 @@ a {
     text-decoration: none;
 }
 
+.btn .badge {
+    position: relative;
+    top: -7px;
+}
+
 .btn-login {
     position: absolute;
     right: 10px;
@@ -83,4 +88,28 @@ a {
     display: inline-block;
     margin-top: 10px;
     margin-right: 20px;
+}
+
+/* -------------------------------- Cart Page ------------------------------- */
+
+.bi-x-circle {
+    font-size: 120%;
+    transition: all 0.3s ease-in-out;
+}
+
+.bi-x-circle:hover {
+    color: red;
+    cursor: pointer;
+    font-size: 140%;
+    font-weight: bold;
+}
+
+td {
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-img {
+    height: 70px;
+    width: auto;
 }
