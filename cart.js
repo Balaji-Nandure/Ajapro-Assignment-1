@@ -35,3 +35,19 @@ function renderCart() {
 }
 
 renderCart();
+
+/* ------------------ Calculate and update the total price ------------------ */
+function calculateTotal() {
+    let sum = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+        let item = cart[i];
+        let subtotal = item.quantity * item.price;
+        sum += subtotal;
+    }
+
+    console.log("total = " + sum);
+    return sum;
+}
+
+calculateTotal();
