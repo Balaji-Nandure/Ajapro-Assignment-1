@@ -53,3 +53,11 @@ function calculateTotal() {
 }
 
 calculateTotal();
+
+/* --------------- Place the order button click functionality --------------- */
+const placeOrderButton = document.querySelector(".place-order");
+placeOrderButton.addEventListener("click", () => {
+    alert(
+        "Your order has been successfully placed and will be processed shortly. We will send you a confirmation email with your order details."
+    );
+});
