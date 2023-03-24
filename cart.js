@@ -30,6 +30,7 @@ function renderCart() {
             cart.splice(index, 1);
             localStorage.setItem("cart", JSON.stringify(cart));
             renderCart();
+            calculateTotal();
         });
     });
 }
@@ -37,6 +38,7 @@ function renderCart() {
 renderCart();
 
 /* ------------------ Calculate and update the total price ------------------ */
+const totalAmount = document.querySelector(".total-amount");
 function calculateTotal() {
     let sum = 0;
 
@@ -47,7 +49,7 @@ function calculateTotal() {
     }
 
     console.log("total = " + sum);
-    return sum;
+    return (totalAmount.innerHTML = `Total amount: ₹${sum}`);
 }
 
 calculateTotal();
