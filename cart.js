@@ -38,7 +38,9 @@ function renderCart() {
 renderCart();
 
 /* ------------------ Calculate and update the total price ------------------ */
+const placeOrderButton = document.querySelector(".place-order");
 const totalAmount = document.querySelector(".total-amount");
+
 function calculateTotal() {
     let sum = 0;
 
@@ -49,15 +51,35 @@ function calculateTotal() {
     }
 
     console.log("total = " + sum);
-    return (totalAmount.innerHTML = `Total amount: ₹${sum}`);
+
+    if (cart.length != 0) {
+        return (totalAmount.innerHTML = `Total amount: ₹${sum}`);
+    } else {
+        totalAmount.innerHTML = "No items in your cart.";
+        placeOrderButton.style.display = "none";
+        renderNavbat();
+        return;
+    }
 }
 
 calculateTotal();
 
 /* --------------- Place the order button click functionality --------------- */
-const placeOrderButton = document.querySelector(".place-order");
+const cartTable = document.querySelector(".cart-table");
 placeOrderButton.addEventListener("click", () => {
     alert(
         "Your order has been successfully placed and will be processed shortly. We will send you a confirmation email with your order details."
     );
+    cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    if (cart.length == 0) {
+        placeOrderButton.style.display = "none";
+        cartTable.style.display = "none";
+    }
+
+    calculateTotal();
+    renderCart();
+    renderNavbat();
+    renderTotalItems();
 });
