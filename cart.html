@@ -222,11 +222,45 @@
                 <div
                     class="total-amount alert alert-primary"
                     role="alert"></div>
-                <button class="place-order btn btn-primary">
+                <button
+                    class="place-order btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#orderPlacedModal">
                     Place the order
                 </button>
             </div>
         </div>
+
+        <!-- Order placed modal astarts -->
+        <!-- Modal -->
+        <div
+            class="modal fade"
+            id="orderPlacedModal"
+            tabindex="-1"
+            aria-labelledby="orderPlacedModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="orderPlacedModalLabel">
+                            Order Placed Successfully
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Your order has been placed successfully.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="/" class="btn btn-primary">Shop More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Order placed modal ends -->
 
         <!-- Testing code -->
         <!-- <div class="container alert alert-success" role="alert">

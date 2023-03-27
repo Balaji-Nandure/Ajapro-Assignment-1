@@ -39,6 +39,10 @@ renderCart();
 
 /* ------------------ Calculate and update the total price ------------------ */
 const placeOrderButton = document.querySelector(".place-order");
+var orderPlacedModal = new bootstrap.Modal(
+    document.getElementById("orderPlacedModal")
+);
+
 const totalAmount = document.querySelector(".total-amount");
 
 function calculateTotal() {
@@ -67,9 +71,10 @@ calculateTotal();
 /* --------------- Place the order button click functionality --------------- */
 const cartTable = document.querySelector(".cart-table");
 placeOrderButton.addEventListener("click", () => {
-    alert(
-        "Your order has been successfully placed and will be processed shortly. We will send you a confirmation email with your order details."
-    );
+    // alert(
+    //     "Your order has been successfully placed and will be processed shortly. We will send you a confirmation email with your order details."
+    // );
+    orderPlacedModal.show();
     cart = [];
     localStorage.setItem("cart", JSON.stringify(cart));
 
