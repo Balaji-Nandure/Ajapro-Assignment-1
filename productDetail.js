@@ -9,9 +9,7 @@ console.log(product);
 const htmlToRoot = `<div class="row">
     <!-- Shirt image -->
     <div class="col-6 col-md-5 img-div">
-        <img
-            id="image-src"
-            src="${product.image}" />
+        <img id="image-src" src="${product.image}" />
     </div>
     <!-- Shirt description -->
     <div class="pt-4 col-6 col-md-7 shirt-detail-text">
@@ -27,15 +25,31 @@ const htmlToRoot = `<div class="row">
             <option value="xl">Extra Large (Xl)</option>
             <option value="xxl">Extra Extra Large (Xl)</option>
         </select>
+
+        <button type="button" class="inc btn btn-outline-secondary">
+            +
+        </button>
         <input
-            type="number" id="quantity"
-            class="quantity form-control"
+            type="number"
+            id="quantity"
+            class="text-center quantity form-control"
             value="1"
             min="1"
             max="5" />
-    
-        <a href="#" id="add-to-cart" class="btn btn-primary">Add to Cart</a>
-    
+
+        <button type="button" class="dec btn btn-outline-secondary">
+            -
+        </button>
+
+        <br />
+
+        <a id="buy-now" href="./buynow.html">
+            <button class="mt-2 btn btn-success">Buy Now</button>
+        </a>
+        <a href="#" id="add-to-cart" class="mt-2 btn btn-primary"
+            >Add to Cart</a
+        >
+
         <h5 class="mt-3">
             <b class="d-block">Product Description :-</b>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -44,12 +58,21 @@ const htmlToRoot = `<div class="row">
             veritatis. Quae corrupti ipsam esse reiciendis non.
         </h5>
     </div>
-</div>`;
+    </div>`;
 productDetailRoot.innerHTML = htmlToRoot;
 
 /* --------------------------- Cart Functionality --------------------------- */
 const quantity = document.getElementById("quantity");
+const inc = document.querySelector(".inc");
+const dec = document.querySelector(".dec");
 const addToCart = document.getElementById("add-to-cart");
+
+const increaseQuantity = function () {
+    if (quantity.value < 5) {
+        quantity.value++;
+    }
+};
+inc.addEventListener("click", increaseQuantity);
 
 const bootstrapalert = function (classname, msg) {
     // It means product is already in the cart

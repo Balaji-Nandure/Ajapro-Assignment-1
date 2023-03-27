@@ -87,7 +87,7 @@ a {
     width: 15%;
     display: inline-block;
     margin-top: 10px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
 }
 
 /* -------------------------------- Cart Page ------------------------------- */
@@ -113,3 +113,12 @@ td {
     height: 70px;
     width: auto;
 }
+
+.remove-button {
+    text-decoration: none;
+    color: black;
+}
+
+/* .remove-button:hover {
+    color: black;
+} */

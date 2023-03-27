@@ -7,8 +7,8 @@ function renderCart() {
     cartTbody.innerHTML = "";
     cart.forEach((product, index) => {
         const trToRender = `<tr>
-      <th class="text-center align-middle" scope="row">
-        <a id="remove-button-${index}" href="#"><i class="bi bi-x-circle"></i></a>
+      <th class="text-start align-middle" scope="row">
+        <a class="remove-button" id="remove-button-${index}" href="#"><b>Delete</b></a>
       </th>
       <td class="align-middle">
         <img
