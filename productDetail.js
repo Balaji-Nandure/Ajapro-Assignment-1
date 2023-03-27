@@ -26,25 +26,25 @@ const htmlToRoot = `<div class="row">
             <option value="xxl">Extra Extra Large (Xl)</option>
         </select>
 
-        <button type="button" class="inc btn btn-outline-secondary">
-            +
-        </button>
+        <button type="button" class="dec btn btn-outline-secondary">
+            -
+        </button>       
         <input
-            type="number"
+            type="number" 
+            readonly
             id="quantity"
             class="text-center quantity form-control"
             value="1"
             min="1"
             max="5" />
-
-        <button type="button" class="dec btn btn-outline-secondary">
-            -
+        <button type="button" class="inc btn btn-outline-secondary">
+            +
         </button>
 
         <br />
 
-        <a id="buy-now" href="./buynow.html">
-            <button class="mt-2 btn btn-success">Buy Now</button>
+        <a  href="#">
+            <button id="buy-now" class="mt-2 btn btn-success">Buy Now</button>
         </a>
         <a href="#" id="add-to-cart" class="mt-2 btn btn-primary"
             >Add to Cart</a
@@ -66,14 +66,20 @@ const quantity = document.getElementById("quantity");
 const inc = document.querySelector(".inc");
 const dec = document.querySelector(".dec");
 const addToCart = document.getElementById("add-to-cart");
+const buyNow = document.querySelector("#buy-now");
 
 const increaseQuantity = function () {
     if (quantity.value < 5) {
         quantity.value++;
     }
 };
+const decreaseQuantity = function () {
+    if (quantity.value > 1) {
+        quantity.value--;
+    }
+};
 inc.addEventListener("click", increaseQuantity);
-
+dec.addEventListener("click", decreaseQuantity);
 const bootstrapalert = function (classname, msg) {
     // It means product is already in the cart
     const alert = document.createElement("div");
@@ -100,7 +106,7 @@ const bootstrapalert = function (classname, msg) {
     }, 1000);
 };
 
-addToCart.addEventListener("click", () => {
+const addToCartClick = function () {
     const cartItem = {
         ...product,
         quantity: quantity.value,
@@ -121,4 +127,29 @@ addToCart.addEventListener("click", () => {
         // for updating the cart button red badge numver
         totalCartItems.innerText = cart.length;
     }
+};
+addToCart.addEventListener("click", addToCartClick);
+
+const buyNowBtnClick = function () {
+    const cartItem = {
+        ...product,
+        quantity: quantity.value,
+    };
+
+    const existingIndex = cart.findIndex(
+        (item) => item.productId === cartItem.productId
+    );
+
+    if (existingIndex === -1) {
+        // adding product to the localstorage cart
+        cart.push(cartItem);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        // bootstrapalert("success", "Product Successfully added to the cart");
+        // for updating the cart button red badge numver
+        totalCartItems.innerText = cart.length;
+    }
+};
+buyNow.addEventListener("click", () => {
+    buyNowBtnClick();
+    window.location.href = "./cart.html";
 });

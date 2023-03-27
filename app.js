@@ -27,6 +27,8 @@ const products = [
     },
 ];
 
+/* ------------------------- render data dynamically ------------------------ */
+
 // Element Selector
 const cardsInIndex = document.querySelectorAll(".cardInIndex");
 const cartBtn = document.getElementById("cart-btn");
@@ -58,6 +60,7 @@ cartBtn.addEventListener("click", () => {
         cartTable.style.display = "none";
     }
 });
+
 // console.log(cartBtn);
 
 const renderNavbat = function () {
