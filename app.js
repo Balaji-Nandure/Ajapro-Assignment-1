@@ -53,6 +53,10 @@ if (locallyStoredCart) {
 
 cartBtn.addEventListener("click", () => {
     window.location.href = "./cart.html";
+    if (cart.length == 0) {
+        placeOrderButton.style.display = "none";
+        cartTable.style.display = "none";
+    }
 });
 // console.log(cartBtn);
 
