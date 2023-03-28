@@ -18,7 +18,23 @@ function renderCart() {
       </td>
       <td class="align-middle">${product.title}</td>
       <td class="align-middle">₹${product.price}</td>
-      <td class="align-middle">${product.quantity}</td>
+      <td class="align-middle">
+            <button type="button" class="dec btn btn-outline-secondary">
+                -
+            </button>
+            <input
+            type="number" 
+            readonly
+            id="quantity"
+            class="quantity text-center quantity form-control"
+            value="${product.quantity}"
+            min="1"
+            max="5" />
+             
+            <button type="button" class="inc btn btn-outline-secondary">
+                +
+            </button>
+      </td>
       <td class="align-middle">₹${product.quantity * product.price}</td>
     </tr>`;
 
@@ -36,6 +52,8 @@ function renderCart() {
 }
 
 renderCart();
+
+/* ----------------------- Increase decrease quantity ----------------------- */
 
 /* ------------------ Calculate and update the total price ------------------ */
 const placeOrderButton = document.querySelector(".place-order");

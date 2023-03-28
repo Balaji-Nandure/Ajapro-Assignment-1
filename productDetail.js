@@ -78,6 +78,7 @@ const decreaseQuantity = function () {
         quantity.value--;
     }
 };
+
 inc.addEventListener("click", increaseQuantity);
 dec.addEventListener("click", decreaseQuantity);
 const bootstrapalert = function (classname, msg) {
