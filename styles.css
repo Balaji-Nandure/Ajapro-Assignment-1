@@ -1,12 +1,14 @@
 /** @format */
 /* google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Pacifico&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Kanit", sans-serif;
+    font-weight: bold;
 }
 
 /* --------------------------------- Navbar --------------------------------- */
@@ -55,14 +57,14 @@ a {
     display: inline-block;
     margin-bottom: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
 .card:hover {
     box-shadow: 0.1px 0.1px 20px rgba(0, 0, 0, 0.2);
     /* transform: translateY(-2px); */
-    transform: scale(1.01);
+    transform: scale(1.04);
 }
 
 /* ----------------------------- Shirt-detail ----------------------------- */

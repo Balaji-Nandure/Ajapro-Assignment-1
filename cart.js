@@ -57,7 +57,7 @@ function calculateTotal() {
     console.log("total = " + sum);
 
     if (cart.length != 0) {
-        return (totalAmount.innerHTML = `Total amount: ₹${sum}`);
+        return (totalAmount.innerHTML = `Total amount: <b>₹${sum}</b>`);
     } else {
         totalAmount.innerHTML = "No items in your cart.";
         placeOrderButton.style.display = "none";
